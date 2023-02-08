@@ -12,6 +12,9 @@ import { IEventos } from './../../shared/models/IEventos';
 export class EventosComponent implements OnInit {
 
   public eventos!: IEventos[];
+  larguraImg = 120;
+  margemImg = 2;
+  verImg = true;
 
   constructor(private http: HttpClient){}
 
@@ -30,6 +33,10 @@ export class EventosComponent implements OnInit {
           }
         )
       })
+  }
+
+  mostrarImagem(){
+    this.verImg = !this.verImg;
   }
 
 }
