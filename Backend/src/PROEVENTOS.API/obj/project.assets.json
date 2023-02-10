@@ -928,6 +928,45 @@
             "rid": "win"
           }
         }
+      },
+      "PROEVENTOS.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "PROEVENTOS.Domain": "1.0.0",
+          "PROEVENTOS.Persistence": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PROEVENTOS.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PROEVENTOS.Application.dll": {}
+        }
+      },
+      "PROEVENTOS.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/PROEVENTOS.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PROEVENTOS.Domain.dll": {}
+        }
+      },
+      "PROEVENTOS.Persistence/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.2",
+          "MySql.EntityFrameworkCore": "7.0.0",
+          "PROEVENTOS.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PROEVENTOS.Persistence.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PROEVENTOS.Persistence.dll": {}
+        }
       }
     }
   },
@@ -2939,6 +2978,21 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "PROEVENTOS.Application/1.0.0": {
+      "type": "project",
+      "path": "../PROEVENTOS.Application/PROEVENTOS.Application.csproj",
+      "msbuildProject": "../PROEVENTOS.Application/PROEVENTOS.Application.csproj"
+    },
+    "PROEVENTOS.Domain/1.0.0": {
+      "type": "project",
+      "path": "../PROEVENTOS.Domain/PROEVENTOS.Domain.csproj",
+      "msbuildProject": "../PROEVENTOS.Domain/PROEVENTOS.Domain.csproj"
+    },
+    "PROEVENTOS.Persistence/1.0.0": {
+      "type": "project",
+      "path": "../PROEVENTOS.Persistence/PROEVENTOS.Persistence.csproj",
+      "msbuildProject": "../PROEVENTOS.Persistence/PROEVENTOS.Persistence.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2946,8 +3000,10 @@
       "Microsoft.AspNetCore.OpenApi >= 7.0.2",
       "Microsoft.EntityFrameworkCore >= 7.0.2",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.2",
+      "Microsoft.EntityFrameworkCore.Relational >= 7.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.2",
       "MySql.EntityFrameworkCore >= 7.0.0",
+      "PROEVENTOS.Application >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -2977,7 +3033,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ModalGR\\Documents\\Estudos\\udemyFullStack\\proeventos\\Backend\\src\\PROEVENTOS.Application\\PROEVENTOS.Application.csproj": {
+              "projectPath": "C:\\Users\\ModalGR\\Documents\\Estudos\\udemyFullStack\\proeventos\\Backend\\src\\PROEVENTOS.Application\\PROEVENTOS.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -3001,6 +3061,10 @@
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
+            "target": "Package",
+            "version": "[7.0.2, )"
+          },
+          "Microsoft.EntityFrameworkCore.Relational": {
             "target": "Package",
             "version": "[7.0.2, )"
           },

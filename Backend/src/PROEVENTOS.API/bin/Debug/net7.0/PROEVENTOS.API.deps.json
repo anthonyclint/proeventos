@@ -11,8 +11,10 @@
           "Microsoft.AspNetCore.OpenApi": "7.0.2",
           "Microsoft.EntityFrameworkCore": "7.0.2",
           "Microsoft.EntityFrameworkCore.Design": "7.0.2",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.2",
           "MySql.EntityFrameworkCore": "7.0.0",
+          "PROEVENTOS.Application": "1.0.0",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
@@ -490,6 +492,30 @@
             "fileVersion": "4.700.19.56404"
           }
         }
+      },
+      "PROEVENTOS.Application/1.0.0": {
+        "dependencies": {
+          "PROEVENTOS.Domain": "1.0.0",
+          "PROEVENTOS.Persistence": "1.0.0"
+        },
+        "runtime": {
+          "PROEVENTOS.Application.dll": {}
+        }
+      },
+      "PROEVENTOS.Domain/1.0.0": {
+        "runtime": {
+          "PROEVENTOS.Domain.dll": {}
+        }
+      },
+      "PROEVENTOS.Persistence/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.2",
+          "MySql.EntityFrameworkCore": "7.0.0",
+          "PROEVENTOS.Domain": "1.0.0"
+        },
+        "runtime": {
+          "PROEVENTOS.Persistence.dll": {}
+        }
       }
     }
   },
@@ -890,6 +916,21 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "PROEVENTOS.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PROEVENTOS.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PROEVENTOS.Persistence/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
