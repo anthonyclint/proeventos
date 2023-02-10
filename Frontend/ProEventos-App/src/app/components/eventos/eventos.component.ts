@@ -12,9 +12,20 @@ import { IEventos } from './../../shared/models/IEventos';
 export class EventosComponent implements OnInit {
 
   public eventos!: IEventos[];
+  public eventosFiltrados!: IEventos[];
   larguraImg = 120;
   margemImg = 2;
   verImg = true;
+  private _filtroLista = '';
+
+  public get filtroLista(): string{
+    return this._filtroLista;
+  }
+
+  public set filtroLista(value: string){
+    this._filtroLista = value;
+    this.eventosFiltrados = this.filtroLista ? this.filtrarEventos(this.filtroLista) : this.eventos;
+  }
 
   constructor(private http: HttpClient){}
 
@@ -26,7 +37,8 @@ export class EventosComponent implements OnInit {
     this.http.get<IEventos[]>(`${environment.apiUrl}eventos`)
       .subscribe({
         next: (response) => {
-          this.eventos = response
+          this.eventos = response;
+          this.eventosFiltrados = this.eventos
         },
         error: ( (err) => {
           console.log(err)
@@ -35,7 +47,15 @@ export class EventosComponent implements OnInit {
       })
   }
 
-  mostrarImagem(){
+  filtrarEventos(filtrar: string){
+    filtrar = filtrar.toLocaleLowerCase();
+    return this.eventos.filter(
+      evento => evento.tema.toLocaleLowerCase().indexOf(filtrar) !== -1 ||
+      evento.local.toLocaleLowerCase().indexOf(filtrar) !== -1
+    )
+  }
+
+  mostrarImagem(): void{
     this.verImg = !this.verImg;
   }
 
