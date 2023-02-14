@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PROEVENTOS.Persistence;
+using PROEVENTOS.Persistence.Contexto;
 // using PROEVENTOS.Persistence.Contextos;
 
 #nullable disable
